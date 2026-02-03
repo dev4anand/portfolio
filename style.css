@@ -342,6 +342,14 @@ section {
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
+.skill-category {
+    text-align: center;
+    color: var(--dim-text);
+    margin: 2rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
 /* Contact Section */
 .contact-container {
     display: flex;
