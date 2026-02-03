@@ -58,16 +58,21 @@ function createStars() {
     }
 }
 
-function createShootingStar() {
+function createShootingStar(x, y) {
     const container = document.getElementById('space-background');
     if (!container) return;
 
     const shootingStar = document.createElement('div');
     shootingStar.className = 'shooting-star';
 
-    // Random start position
-    shootingStar.style.left = Math.random() * 100 + '%';
-    shootingStar.style.top = Math.random() * 50 + '%'; // Mostly top half
+    // If coordinates provided (click), start there. Else random.
+    if (x !== undefined && y !== undefined) {
+        shootingStar.style.left = x + 'px';
+        shootingStar.style.top = y + 'px';
+    } else {
+        shootingStar.style.left = Math.random() * 100 + '%';
+        shootingStar.style.top = Math.random() * 50 + '%';
+    }
 
     // Random duration
     const duration = Math.random() * 2 + 2; // 2-4s
@@ -84,6 +89,11 @@ function createShootingStar() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     createStars();
-    // Spawn a shooting star every 2-5 seconds
-    setInterval(createShootingStar, 3000);
+    // Spawn a shooting star every 3 seconds randomly
+    setInterval(() => createShootingStar(), 3000);
+
+    // Spawn shooting star on click
+    document.addEventListener('click', (e) => {
+        createShootingStar(e.clientX, e.clientY);
+    });
 });
