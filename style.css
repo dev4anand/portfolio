@@ -187,7 +187,6 @@ section {
     border-radius: 2px;
 }
 
-/* Cards Grid */
 .grid {
     display: grid;
     /* Reduced min-width to 280px to fit better on standard mobile screens (approx 320px+) without breaking layout or causing overflow */
@@ -195,7 +194,25 @@ section {
     gap: 2rem;
 }
 
+/* Cards Grid */
+.grid-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
 .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-2 {
+    flex: 1 1 300px;
+    max-width: 380px;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 16px;
