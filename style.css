@@ -237,6 +237,12 @@ section {
     backdrop-filter: blur(5px);
 }
 
+.card-wide {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .card:hover,
 .card-2:hover {
     transform: translateY(-5px);
