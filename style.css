@@ -34,15 +34,18 @@ body {
 /* Star Background Container */
 #space-background {
     position: fixed;
-    top: 0;
+    top: -10vh;
+    /* OVERSCAN: Start above the viewport */
     left: 0;
     width: 100%;
-    height: 100vh;
-    height: 100dvh;
+    height: 120vh;
+    height: 120dvh;
+    /* OVERSCAN: Be taller than viewport to cover bottom resizing */
     /* Dynamic viewport height for mobile browsers */
     z-index: -1;
     overflow: hidden;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    pointer-events: none;
 }
 
 .star {
